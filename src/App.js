@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react"
+import Footer from "./components/Footer"
+import Header from "./components/Header"
+import MgameEdit from "./pages/MgameEdit"
+import MgameIndex from "./pages/MgameIndex"
+import MgameNew from "./pages/MgameNew"
+import MgameShow from "./pages/MgameShow"
+import Home from "./pages/Home"
+import NotFound from "./pages/NotFound"
+import { Routes, Route } from "react-router-dom"
+import './App.css'
+
+import mockMgames from "./mockMgames"
 
 function App() {
+  const [mgames, setMgames] = useState(mockMgames)
+  console.log(mgames)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/mgameindex" element={<MgameIndex />} />
+        <Route path="/mgameshow" element={<MgameShow />} />
+        <Route path="/mgamenew" element={<MgameNew />} />
+        <Route path="/mgameedit" element={<MgameEdit />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </>
+  )
 }
 
-export default App;
+export default App
