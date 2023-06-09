@@ -21,7 +21,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/mgameindex" element={<MgameIndex />} />
+        <Route path="/mgameindex" element={<MgameIndex mgames={mgames} />} />
         <Route path="/mgameshow" element={<MgameShow />} />
         <Route path="/mgamenew" element={<MgameNew />} />
         <Route path="/mgameedit" element={<MgameEdit />} />
