@@ -1,0 +1,9 @@
+.card {
+    margin: 2rem 0;
+}
+  
+.mgame-index-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

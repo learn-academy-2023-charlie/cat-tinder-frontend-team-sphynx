@@ -8,8 +8,9 @@ const MgameIndex = ({ mgames }) => {
         return (
           <Card
             style={{
-              width: '18rem'
+              width: '20rem'
             }}
+            key={index}
             >
             <CardBody>
               <CardTitle tag="h5">
@@ -20,13 +21,16 @@ const MgameIndex = ({ mgames }) => {
                 tag="h6"
               >
                 {mgame.game_type}
-                {mgame.file_size}
+                <br></br>
+                <br></br>
+                File Size: {mgame.file_size}
               </CardSubtitle>
             </CardBody>
             <img
               alt={`profile of ${mgame.name}`}
               src={mgame.img}
               width="100%"
+              height="400px"
             />
             <CardBody>
               <CardText>
