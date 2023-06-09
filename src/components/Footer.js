@@ -6,7 +6,7 @@ const Footer = () => {
     <>
         <Navbar
             className="my-2"
-            color="secondary"
+            color="dark"
             dark
             fixed="bottom"
         >
