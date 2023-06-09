@@ -46,11 +46,10 @@ function Header(...args) {
               <Nav 
                 className="drop-down" 
                 justified
-                pills
               >
 
                 <NavItem>
-                  <NavLink href="../pages/mgameindex">
+                  <NavLink to="/mgameindex" className="nav-link">
                   <img 
                   src="https://see.fontimg.com/api/renderfont4/z8p30/eyJyIjoiZnMiLCJoIjoxOCwidyI6MTAwMCwiZnMiOjE4LCJmZ2MiOiIjNEY5QkQ1IiwiYmdjIjoiIzIyMjIyMiIsInQiOjF9/VmlldyBHYW1lcw/lightersdemo.png" 
                   alt="view game fonts"
@@ -60,7 +59,7 @@ function Header(...args) {
                 </NavItem>
 
                 <NavItem>
-                  <NavLink href="../pages/mgamenew">
+                  <NavLink to="/mgamenew" className="nav-link">
                   <img 
                   src="https://see.fontimg.com/api/renderfont4/z8p30/eyJyIjoiZnMiLCJoIjoxOCwidyI6MTAwMCwiZnMiOjE4LCJmZ2MiOiIjNEY5QkQ1IiwiYmdjIjoiIzIyMjIyMiIsInQiOjF9/QWRkIE5ldw/lightersdemo.png" 
                   alt="Add new fonts"
