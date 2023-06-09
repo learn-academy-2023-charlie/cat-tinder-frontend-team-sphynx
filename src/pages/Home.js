@@ -3,7 +3,11 @@ import React from "react"
 const Home = () => {
   return(
     <>
-      <h1>Mobile Game Sharing Center 🎮 </h1>
+      <section 
+       className="banner-section"
+      >
+        <h4>Find Your Go To Mobile Game Here 😉</h4>
+      </section>
     </>
   )
 }
