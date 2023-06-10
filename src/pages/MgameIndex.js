@@ -1,10 +1,10 @@
 import React from "react"
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardLink} from "reactstrap"
+import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardLink, Button} from "reactstrap"
 
 const MgameIndex = ({ mgames }) => {
   return (
     <main className="mgame-index-cards">
-      {mgames.map((mgame, index) => {
+      {mgames?.map((mgame, index) => {
         return (
           <Card
             style={{
@@ -33,15 +33,37 @@ const MgameIndex = ({ mgames }) => {
               height="400px"
             />
             <CardBody>
-              <CardText>
-                {mgame.summary}
-              </CardText>
-              <CardLink href="#">
-                apple link
-              </CardLink>
-              <CardLink href="#">
-                extra Link
-              </CardLink>
+
+              <Button 
+              href={`/mgameshow/${mgame.id}`}
+              >
+                Detail
+              </Button>
+
+              {' '}
+
+              <Button 
+              href="#"
+              >
+                IOS
+              </Button>
+
+              {' '}
+
+              <Button 
+              href="#"
+              >
+                Andriod
+              </Button>
+
+              {' '}
+
+              <Button 
+              href="#"
+              >
+                WEB
+              </Button>
+
             </CardBody>
           </Card>
         )

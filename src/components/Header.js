@@ -33,10 +33,11 @@ function Header(...args) {
             height="150px"
             width="150px"
         />
+        
         <img 
             src="https://see.fontimg.com/api/renderfont4/z8p30/eyJyIjoiZnMiLCJoIjo1MSwidyI6MTAwMCwiZnMiOjUxLCJmZ2MiOiIjQ0FEQkU4IiwiYmdjIjoiIzIyMjIyMiIsInQiOjF9/TS1HYW1lIFNoYXJl/lightersdemo.png" 
-            alt="Mgame share fonts" 
-            height="50px"
+            alt="Mgame share fonts"
+            className="mgame-share-font"
         />
         </NavbarBrand>
           <NavbarToggler onClick={toggle} />

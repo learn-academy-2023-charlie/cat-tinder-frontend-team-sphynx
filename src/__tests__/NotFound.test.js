@@ -9,9 +9,6 @@ describe('<NotFound />', () => {
         <NotFound />
       </BrowserRouter>
     )
-    const notImg = screen.getByRole('img', {
-      name: /Not found img/i
-    })
 
     const notText = screen.getByAltText(/Not found img/i)
 
