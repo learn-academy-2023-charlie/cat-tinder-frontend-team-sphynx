@@ -1,0 +1,32 @@
+.card {
+    margin: 2rem 0;
+}
+  
+.mgame-index-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom:10%;
+}
+
+.mgame-show-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom:10%;
+}
+
+.footer-nav {
+    padding-top: 5%;
+}
+
+.back-button {
+    margin-left: 35%;
+}
+
+.mgame-share-font {
+    max-width: auto;
+    max-height: 100%;
+    margin-left: 5%;
+}
+

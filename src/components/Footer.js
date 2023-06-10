@@ -5,7 +5,7 @@ const Footer = () => {
   return(
     <>
         <Navbar
-            className="my-2"
+            className="footer-nav"
             color="dark"
             dark
             fixed="bottom"
