@@ -30,8 +30,8 @@ function Header(...args) {
             src={MgameLogo}
             alt="Mgame Tinder logo gif"
             className="mgame-logo"
-            height="150px"
-            width="150px"
+            height="120px"
+            width="120px"
         />
         
         <img 

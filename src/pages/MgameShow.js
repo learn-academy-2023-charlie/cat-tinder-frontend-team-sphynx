@@ -16,7 +16,8 @@ const MgameShow = ({ mgames }) => {
       {currentMgame && (
               <Card
                 style={{
-                  width: '35rem'
+                  width: '30rem',
+                  
                 }}
               >
                 <CardBody>
