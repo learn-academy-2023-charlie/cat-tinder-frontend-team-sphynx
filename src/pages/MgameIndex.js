@@ -30,7 +30,7 @@ const MgameIndex = ({ mgames }) => {
               alt={`profile of ${mgame.name}`}
               src={mgame.img}
               width="100%"
-              height="400px"
+              height="380px"
             />
             <CardBody>
 
