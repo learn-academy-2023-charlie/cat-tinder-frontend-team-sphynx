@@ -13,4 +13,4 @@ describe("<Footer />", () => {
       const footLink = screen.getByRole('link', {name: /yuehan & ramgel/i })
       expect(footLink).toBeInTheDocument()
     })
-  })
+})

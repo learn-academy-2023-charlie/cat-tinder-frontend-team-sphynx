@@ -14,7 +14,10 @@ import mockMgames from "./mockMgames"
 
 function App() {
   const [mgames, setMgames] = useState(mockMgames)
-  // console.log(mgames)
+
+  const createMgame = (mgame) => {
+    console.log(mgame)
+  }
 
   return (
     <>
@@ -23,7 +26,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/mgameindex" element={<MgameIndex mgames={mgames} />} />
         <Route path="/mgameshow/:id" element={<MgameShow mgames={mgames} />} />
-        <Route path="/mgamenew" element={<MgameNew />} />
+        <Route path="/mgamenew" element={<MgameNew createMgame={createMgame} />} />
         <Route path="/mgameedit" element={<MgameEdit />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

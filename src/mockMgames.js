@@ -20,7 +20,7 @@ const mgames = [
       id: 3,
       name: 'Goddess of Victory: Nikke',
       game_type: 'Immersive sci-fi RPG shooter',
-      file_size: '3.4 GB',
+      file_size: '4.1 GB',
       summary: 'GODDESS OF VICTORY: NIKKE is an immersive sci-fi RPG shooter game, where you recruit and command various maidens to form a beautiful anime girl squad that specializes in wielding guns and other unique sci-fi weapons. Command and collect girls that have unique combat specialties to create your ultimate team!', 
       img: 'https://assets-prd.ignimgs.com/2022/03/07/battle-gif-02-1646680159065.gif'
     }
