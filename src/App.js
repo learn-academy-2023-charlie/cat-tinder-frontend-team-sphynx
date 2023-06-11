@@ -19,6 +19,11 @@ function App() {
     console.log(mgame)
   }
 
+  const updateMgame = (mgame, id) => {
+    console.log("mgame:", mgame)
+    console.log("id:", id)
+  }
+
   return (
     <>
       <Header />
@@ -27,7 +32,7 @@ function App() {
         <Route path="/mgameindex" element={<MgameIndex mgames={mgames} />} />
         <Route path="/mgameshow/:id" element={<MgameShow mgames={mgames} />} />
         <Route path="/mgamenew" element={<MgameNew createMgame={createMgame} />} />
-        <Route path="/mgameedit" element={<MgameEdit />} />
+        <Route path="/mgameedit/:id" element={<MgameEdit mgames={mgames} updateMgame={updateMgame}/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
