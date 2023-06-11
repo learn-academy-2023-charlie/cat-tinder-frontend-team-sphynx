@@ -1,6 +1,6 @@
 import React from "react"
 import { useParams } from "react-router-dom"
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button, CardLink} from "reactstrap"
+import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button} from "reactstrap"
 
 
 const MgameShow = ({ mgames }) => {
@@ -59,7 +59,7 @@ const MgameShow = ({ mgames }) => {
                   >
                     Andriod
                   </Button>
-
+                
                   {' | '}
 
                   <Button 
@@ -68,12 +68,19 @@ const MgameShow = ({ mgames }) => {
                     WEB
                   </Button>
 
+                  {' | '}
+
+                  <Button 
+                  href={`/mgameedit/${currentMgame.id}`}
+                  >
+                    EDIT
+                  </Button>
+
                   {' '}
 
                   <Button 
                   href="/mgameindex"
                   className="back-button"
-                  
                   >
                     Back
                   </Button>
