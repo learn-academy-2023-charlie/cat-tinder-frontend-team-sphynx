@@ -8,7 +8,6 @@ const MgameShow = ({ mgames }) => {
   console.log(id)
 
   let currentMgame = mgames?.find((mgame) => mgame.id === +id)
-  
   console.log(currentMgame)
 
   return(
