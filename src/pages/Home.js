@@ -3,7 +3,7 @@ import MgameBanner from "../assets/MgameBanner.gif"
 
 const Home = () => {
   return(
-    <div
+    <div 
        className="banner-section"
       >
       <img
