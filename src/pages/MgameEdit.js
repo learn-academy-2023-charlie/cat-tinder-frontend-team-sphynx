@@ -2,11 +2,13 @@ import React, {useState} from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { Form, FormGroup, Input, Label, Button } from "reactstrap"
 
-const MgameEdit = ({ mgames, updateMgame }) => {
+const MgameEdit = ({ mgames , updateMgame }) => {
 
   const { id } = useParams()
-  
+  console.log(id)
+
   let currentMgame = mgames?.find((mgame) => mgame.id === +id)
+  console.log(currentMgame)
 
   const [editMgame, setEditMgame] = useState({
     name: currentMgame.name,
@@ -32,7 +34,6 @@ const MgameEdit = ({ mgames, updateMgame }) => {
     <div
       className="edit-form"
     >
-
       <h3>Mobile game editing page</h3>
       <br></br>
       <Form>

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import MgameEdit from "./pages/MgameEdit"
@@ -13,15 +13,45 @@ import './App.css'
 import mockMgames from "./mockMgames"
 
 function App() {
-  const [mgames, setMgames] = useState(mockMgames)
+  const [mgames, setMgames] = useState([])
 
-  const createMgame = (mgame) => {
-    console.log(mgame)
+  useEffect(() => {
+    readMgame()
+  }, [])
+
+  const readMgame = () => {
+    fetch("http://localhost:3000/mgames")
+    .then((response) => response.json())
+    .then((payload) => {
+      setMgames(payload)
+    })
+    .catch((error) => console.log(error))
+  }
+
+  const createMgame = (createdMgame) => {
+    fetch("http://localhost:3000/mgames", {
+      body: JSON.stringify(createdMgame),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then((response) => response.json())
+    .then((payload) => readMgame())
+    .catch((errors) => console.log("Mgame create errors:", errors))
   }
 
   const updateMgame = (mgame, id) => {
-    console.log("mgame:", mgame)
-    console.log("id:", id)
+    fetch(`http://localhost:3000/mgames/${id}`, {
+      body: JSON.stringify(mgame),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PATCH"
+    })
+    .then((response) => response.json())
+    .then((payload) => readMgame())
+    .catch((errors) => console.log("Mgame create errors:", errors))
   }
 
   return (
@@ -32,7 +62,7 @@ function App() {
         <Route path="/mgameindex" element={<MgameIndex mgames={mgames} />} />
         <Route path="/mgameshow/:id" element={<MgameShow mgames={mgames} />} />
         <Route path="/mgamenew" element={<MgameNew createMgame={createMgame} />} />
-        <Route path="/mgameedit/:id" element={<MgameEdit mgames={mgames} updateMgame={updateMgame}/>} />
+        <Route path="/mgameedit/:id" element={<MgameEdit mgames={mgames} updateMgame={updateMgame} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
