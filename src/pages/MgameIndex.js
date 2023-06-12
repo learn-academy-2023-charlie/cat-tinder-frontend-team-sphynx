@@ -43,6 +43,7 @@ const MgameIndex = ({ mgames }) => {
               {' '}
 
               <Button 
+              color="light"
               href="#"
               >
                 IOS
@@ -51,6 +52,7 @@ const MgameIndex = ({ mgames }) => {
               {' '}
 
               <Button 
+              color="light"
               href="#"
               >
                 Andriod
@@ -59,6 +61,7 @@ const MgameIndex = ({ mgames }) => {
               {' '}
 
               <Button 
+              color="light"
               href="#"
               >
                 WEB

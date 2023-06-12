@@ -1,34 +1,43 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { Form, FormGroup, Input, Label, Button } from "reactstrap"
 
-const MgameEdit = ({ mgames , updateMgame }) => {
+const MgameEdit = ({ mgames , updateMgame, destroyMgame }) => {
 
   const { id } = useParams()
   console.log(id)
 
-  let currentMgame = mgames?.find((mgame) => mgame.id === +id)
-  console.log(currentMgame)
+  const navigate = useNavigate()
 
   const [editMgame, setEditMgame] = useState({
-    name: currentMgame.name,
-    game_type: currentMgame.game_type,
-    file_size: currentMgame.file_size,
-    summary: currentMgame.summary,
-    img: currentMgame.img
+    name: "",
+    game_type: "",
+    file_size: "",
+    summary: "",
+    img: ""
   })
+
+  useEffect(() => {
+    const currentMgame = mgames?.find((mgame) => mgame.id === +id);
+    if (currentMgame) {
+      setEditMgame({
+        name: currentMgame.name,
+        game_type: currentMgame.game_type,
+        file_size: currentMgame.file_size,
+        summary: currentMgame.summary,
+        img: currentMgame.img
+      });
+    }
+  }, [mgames, id]);
 
   const handleChange = (e) => {
     setEditMgame({ ...editMgame, [e.target.name]: e.target.value})
   }
 
   const handleSubmit = () => {
-    updateMgame(editMgame, currentMgame.id)
-    navigate(`/mgameshow/${currentMgame.id}`)
+    updateMgame(editMgame, +id)
+    navigate(`/mgameshow/${id}`)
   } 
-
-  const navigate= useNavigate()
-
 
   return(
     <div
@@ -96,9 +105,22 @@ const MgameEdit = ({ mgames , updateMgame }) => {
         {' | '}
 
         <Button
-         href={`/mgameshow/${currentMgame.id}`}
+        color="dark"
+         href={`/mgameshow/${id}`}
         >
           Back
+        </Button>
+
+        {' | '}
+
+        <br></br>
+
+        <Button
+         color="danger"
+         onClick={() => destroyMgame(id)}
+         className="delete"
+        >
+          Delete this game
         </Button>
 
       </Form>

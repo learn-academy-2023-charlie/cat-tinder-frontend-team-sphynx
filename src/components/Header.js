@@ -10,6 +10,9 @@ import {
  } from "reactstrap"
 import { NavLink } from "react-router-dom"
 import MgameLogo from "../assets/MgameLogo.gif"
+import MgameView from "../assets/MgameView.png"
+import MgameAdd from "../assets/MgameAdd.png"
+import MgameShareFont from "../assets/MgameShareFont.png"
 
 
 
@@ -35,7 +38,7 @@ function Header(...args) {
         />
         
         <img 
-            src="https://see.fontimg.com/api/renderfont4/z8p30/eyJyIjoiZnMiLCJoIjo1MSwidyI6MTAwMCwiZnMiOjUxLCJmZ2MiOiIjQ0FEQkU4IiwiYmdjIjoiIzIyMjIyMiIsInQiOjF9/TS1HYW1lIFNoYXJl/lightersdemo.png" 
+            src={MgameShareFont}
             alt="Mgame share fonts"
             className="mgame-share-font"
         />
@@ -52,8 +55,7 @@ function Header(...args) {
                 <NavItem>
                   <NavLink to="/mgameindex" className="nav-link">
                   <img 
-                  src="https://see.fontimg.com/api/renderfont4/z8p30/eyJyIjoiZnMiLCJoIjoxOCwidyI6MTAwMCwiZnMiOjE4LCJmZ2MiOiIjNEY5QkQ1IiwiYmdjIjoiIzIyMjIyMiIsInQiOjF9/VmlldyBHYW1lcw/lightersdemo.png" 
-                  alt="view game fonts"
+                  src={MgameView}
                   height="15px"
                   />
                   </NavLink>
@@ -62,8 +64,7 @@ function Header(...args) {
                 <NavItem>
                   <NavLink to="/mgamenew" className="nav-link">
                   <img 
-                  src="https://see.fontimg.com/api/renderfont4/z8p30/eyJyIjoiZnMiLCJoIjoxOCwidyI6MTAwMCwiZnMiOjE4LCJmZ2MiOiIjNEY5QkQ1IiwiYmdjIjoiIzIyMjIyMiIsInQiOjF9/QWRkIE5ldw/lightersdemo.png" 
-                  alt="Add new fonts"
+                  src={MgameAdd}
                   height="15px"
                   />
                   </NavLink>

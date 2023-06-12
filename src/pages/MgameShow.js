@@ -45,7 +45,9 @@ const MgameShow = ({ mgames }) => {
                   <CardText>
                     {currentMgame.summary}
                   </CardText>
+
                   <Button 
+                  color="light"
                   href="#"
                   >
                     IOS
@@ -53,7 +55,8 @@ const MgameShow = ({ mgames }) => {
 
                   {' | '}
 
-                  <Button 
+                  <Button
+                  color="light" 
                   href="#"
                   >
                     Andriod
@@ -62,6 +65,7 @@ const MgameShow = ({ mgames }) => {
                   {' | '}
 
                   <Button 
+                  color="light"
                   href="#"
                   >
                     WEB
@@ -78,6 +82,7 @@ const MgameShow = ({ mgames }) => {
                   {' '}
 
                   <Button 
+                  color="dark"
                   href="/mgameindex"
                   className="back-button"
                   >

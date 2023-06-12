@@ -7,7 +7,7 @@ import MgameNew from "./pages/MgameNew"
 import MgameShow from "./pages/MgameShow"
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, useNavigate } from "react-router-dom"
 import './App.css'
 
 import mockMgames from "./mockMgames"
@@ -18,6 +18,8 @@ function App() {
   useEffect(() => {
     readMgame()
   }, [])
+
+  const navigate = useNavigate()
 
   const readMgame = () => {
     fetch("http://localhost:3000/mgames")
@@ -37,7 +39,7 @@ function App() {
       method: "POST"
     })
     .then((response) => response.json())
-    .then((payload) => readMgame())
+    .then((payload) => readMgame(payload))
     .catch((errors) => console.log("Mgame create errors:", errors))
   }
 
@@ -50,9 +52,24 @@ function App() {
       method: "PATCH"
     })
     .then((response) => response.json())
-    .then((payload) => readMgame())
+    .then((payload) => updateMgame(payload))
     .catch((errors) => console.log("Mgame create errors:", errors))
   }
+
+  const destroyMgame = (id) => {
+    fetch(`http://localhost:3000/mgames/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+      .then((response) => response.json())
+      .then((payload) => {
+      readMgame(payload)
+      navigate("/mgameindex")
+      })
+      .catch((error) => console.log("Mgame delete error:", error))
+  };
 
   return (
     <>
@@ -62,7 +79,7 @@ function App() {
         <Route path="/mgameindex" element={<MgameIndex mgames={mgames} />} />
         <Route path="/mgameshow/:id" element={<MgameShow mgames={mgames} />} />
         <Route path="/mgamenew" element={<MgameNew createMgame={createMgame} />} />
-        <Route path="/mgameedit/:id" element={<MgameEdit mgames={mgames} updateMgame={updateMgame} />} />
+        <Route path="/mgameedit/:id" element={<MgameEdit mgames={mgames} updateMgame={updateMgame} destroyMgame={destroyMgame}/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

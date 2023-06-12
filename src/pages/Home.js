@@ -1,14 +1,17 @@
 import React from "react"
+import MgameBanner from "../assets/MgameBanner.gif"
 
 const Home = () => {
   return(
-    <>
-      <section 
+    <div
        className="banner-section"
       >
-        <h4>Find Your Go To Mobile Game Here 😉</h4>
-      </section>
-    </>
+      <img
+          className="banner-img"
+          alt="banner-picture"
+          src={MgameBanner}
+      />
+    </div>
   )
 }
 
